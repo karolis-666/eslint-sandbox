@@ -1,0 +1,51 @@
+{
+  "name": "frontend-monorepo",
+  "packageManager": "yarn@4.0.2",
+  "version": "0.0.1",
+  "private": true,
+  "workspaces": [
+    "./**"
+  ],
+  "devDependencies": {
+    "@types/react": "^18.2.73",
+    "@types/react-dom": "^18.2.23",
+    "@typescript-eslint/eslint-plugin": "^7.5.0",
+    "@typescript-eslint/parser": "^7.5.0",
+    "@vitejs/plugin-react-swc": "^3.6.0",
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-react": "^1.1.7",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5",
+    "syncpack": "^12.3.0",
+    "typescript": "^5.4.3",
+    "vite": "^5.2.7"
+  },
+  "scripts": {
+    "insight": "yarn workspace app-insight run dev",
+    "postinstall": "husky install",
+    "format": "eslint --fix && prettier --write",
+    "typecheck": "yarn workspaces foreach --all run typecheck",
+    "sync-packages": "syncpack fix-mismatches"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "vite-plugin-svgr": "^4.2.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  }
+}
